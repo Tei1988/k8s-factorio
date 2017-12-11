@@ -1,0 +1,4 @@
+files/mods/*.zip
+files/mods/*.json
+files/config/server-settings.json
+k8s.yml
