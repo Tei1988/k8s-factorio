@@ -1,0 +1,19 @@
+{
+  "terrain_segmentation": "high",
+  "water": "normal",
+  "width": 0,
+  "height": 0,
+  "starting_area": "normal",
+  "peaceful_mode": false,
+  "autoplace_controls":
+  {
+    "coal": {"frequency": "normal", "size": "normal", "richness": "very-high"},
+    "copper-ore": {"frequency": "normal", "size": "normal", "richness": "very-high"},
+    "crude-oil": {"frequency": "normal", "size": "normal", "richness": "very-high"},
+    "enemy-base": {"frequency": "high", "size": "normal", "richness": "high"},
+    "iron-ore": {"frequency": "normal", "size": "normal", "richness": "very-high"},
+    "stone": {"frequency": "normal", "size": "normal", "richness": "very-high"},
+    "uranium-ore": {"frequency": "normal", "size": "normal", "richness": "very-high"}
+  },
+  "seed": null
+}
