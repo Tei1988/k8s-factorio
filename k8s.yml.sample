@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: docker.io/dtandersen/factorio:latest
+        image: docker.io/dtandersen/factorio:stable
         imagePullPolicy: Always
         ports:
           - containerPort: 34197
