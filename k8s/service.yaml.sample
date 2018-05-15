@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: factorio-service
+  labels:
+    name: factorio
+spec:
+  ports:
+    - name: udp
+      port: 34197
+      protocol: UDP
+  selector:
+    name: factorio-pod
+  type: LoadBalancer
+  loadBalancerIP: <IP>

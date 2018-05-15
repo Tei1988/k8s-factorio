@@ -1,0 +1,18 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: busybox
+spec:
+  containers:
+    - image: busybox
+      command: ['sleep', '3600']
+      imagePullPolicy: Always
+      name: busybox
+      volumeMounts:
+        - name: factorio-savedata
+          mountPath: /factorio/saves
+  volumes:
+    - name: factorio-savedata
+      persistentVolumeClaim:
+        claimName: factorio-volume
+  restartPolicy: Always

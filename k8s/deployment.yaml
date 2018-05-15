@@ -1,0 +1,47 @@
+ind: Deployment
+apiVersion: apps
+metadata:
+  name: factorio-deployment
+  labels:
+    name: factorio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: factorio-pod
+  template:
+    metadata:
+      labels:
+        name: factorio-pod
+    spec:
+      securityContext:
+        fsGroup: 845
+      containers:
+        - name: factorio
+          image: dtandersen/factorio:0.16.36
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 34197
+              protocol: UDP
+            - containerPort: 27015
+              protocol: TCP
+          env:
+            - name: TZ
+              value: Asia/Tokyo
+          volumeMounts:
+            - name: factorio-savedata
+              mountPath: /factorio/saves
+            - name: factorio-settings
+              mountPath: /factorio/config
+              readOnly: true
+          resources:
+            requests:
+              cpu: 500m
+              memory: 800Mi
+      volumes:
+        - name: factorio-savedata
+          persistentVolumeClaim:
+            claimName: factorio-volume
+        - name: factorio-settings
+          configMap:
+            name: factorio-settings

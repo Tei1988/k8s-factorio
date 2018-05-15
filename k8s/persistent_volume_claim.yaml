@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: factorio-volume
+  labels:
+    name: factorio
+spec:
+  accessModes: ['ReadWriteOnce']
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
